@@ -24,9 +24,14 @@ PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 
 Tab:AddButton({
-	Name = "Button!",
+	Name = "DarkBlade",
 	Callback = function()
-      		print("button pressed")
+      		local args = {
+    [1] = "Dark Blade",
+    [2] = false
+}
+
+game:GetService("ReplicatedStorage").Remotes.ToServer.PremRedeem:InvokeServer(unpack(args))
   	end    
 })
 
